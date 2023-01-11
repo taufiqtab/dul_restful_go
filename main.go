@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/taufiqtab/dulrestful/controllers/productcontroller"
 	"github.com/taufiqtab/dulrestful/controllers/transactioncontroller"
+	"github.com/taufiqtab/dulrestful/controllers/usercontroller"
 	"github.com/taufiqtab/dulrestful/models"
 )
 
@@ -22,6 +23,12 @@ func main() {
 	r.POST("/api/transactions", transactioncontroller.Create)
 	r.PUT("/api/transaction/:id", transactioncontroller.Update)
 	r.DELETE("/api/transaction", transactioncontroller.Delete)
+
+	r.GET("/api/users", usercontroller.Index)
+	r.GET("/api/user/:id", usercontroller.Show)
+	r.POST("/api/users", usercontroller.Create)
+	r.PUT("/api/user/:id", usercontroller.Update)
+	r.DELETE("/api/user", usercontroller.Delete)
 
 	r.Run()
 }
