@@ -13,8 +13,8 @@ func main() {
 	r.GET("/api/products", productcontroller.Index)
 	r.GET("/api/product/:id", productcontroller.Show)
 	r.POST("/api/products", productcontroller.Create)
-	r.PUT("/api/products/:id", productcontroller.Update)
-	r.DELETE("/api/products/:id", productcontroller.Delete)
+	r.PUT("/api/product/:id", productcontroller.Update)
+	r.DELETE("/api/product", productcontroller.Delete)
 
 	r.Run()
 }
